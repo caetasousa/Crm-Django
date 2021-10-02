@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="{% url 'leads:lead-create' %}">Create a new lead</a>
     <h1>This is all of our leads</h1>
     <ul>
         {% for lead in leads %}
-        <li><a href="/leads/{{ lead.pk }}">{{ lead.first_name }} {{ lead.last_name }} {{ lead.age }}</a></li>
+        <li><a href="{% url 'leads:lead-detail' lead.pk %}">{{ lead.first_name }} {{ lead.last_name }} {{ lead.age }}</a></li>
         {% endfor %}
     </ul>
 </body>
